@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinson's Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .rules {
+            background-color: #e0f7fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .rules h2 {
+            color: #00796b;
+            margin-top: 0;
+        }
+        .upload-box {
+            background-color: #fce4ec;
+            padding: 20px;
+            border: 2px dashed #ec407a;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .upload-box input[type="file"] {
+            display: block;
+            margin: 10px auto;
+        }
+        .upload-box button {
+            background-color: #ec407a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .upload-box button:hover {
+            background-color: #d81b60;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Parkinson's Disease Prediction</h1>
+
+    <div class="rules">
+        <h2>Rules for Uploading Data</h2>
+        <ul>
+            <li>The uploaded file should be in <strong>.csv</strong> or <strong>.data</strong> format.</li>
+            <li>The file must contain a column named <strong>'name'</strong> with session identifiers (e.g., <code>phon_R01_S01_1</code>).</li>
+            <li>Ensure that all necessary feature columns are included:
+                <ul>
+                    <li>MDVP:Fo(Hz) - Average vocal fundamental frequency</li>
+                    <li>MDVP:Fhi(Hz) - Maximum vocal fundamental frequency</li>
+                    <li>MDVP:Jitter(%) - Variation in fundamental frequency</li>
+                    <li>... and other required features</li>
+                </ul>
+            </li>
+            <li>The <strong>'status'</strong> column is optional, and it will be ignored during prediction.</li>
+            <li>For every prediction, a person will be assigned a value of <strong>1</strong> if they have Parkinson's and <strong>0</strong> if they do not.</li>
+            <li>The model will predict whether the individual has Parkinson's disease based on the uploaded data.</li>
+        </ul>
+        <h2>What to Expect in the Output File</h2>
+        <ul>
+            <li>The output file will contain predictions for each session along with a summary of predictions for each individual.</li>
+            <li>The final predictions will indicate whether an individual is likely to have Parkinson's disease or not.</li>
+            <li>Summary rows will be included in the output file, showing the total number of individuals predicted to have the disease and those who are not.</li>
+        </ul>
+    </div>
+
+    <div class="upload-box">
+        <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+            <label for="file">Upload CSV or DATA file:</label>
+            <input type="file" id="file" name="file" accept=".csv, .data" required>
+            <button type="submit">Upload and Predict</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
