@@ -1,0 +1,20 @@
+Parkinson's Disease Prediction Web Application
+This web-based application is designed to predict whether an individual has Parkinson's disease based on a range of biomedical voice measurements. It leverages advanced machine learning models to analyze voice data, providing a reliable tool for early detection and proactive healthcare decisions.
+
+Key Features
+Data Upload: Users can upload their voice measurement data in either CSV or DATA format. The file must include specific features such as average vocal fundamental frequency (MDVP:Fo(Hz)), jitter, shimmer, and other relevant voice metrics that are critical for accurate predictions. The name column should uniquely identify each recording session.
+
+Prediction: The application uses pre-trained machine learning models, including TensorFlow, scikit-learn, and XGBoost, to predict the likelihood of Parkinson's disease. Each session in the uploaded data is analyzed, and the application assigns a value of 1 if Parkinson's is likely, and 0 if not. The prediction process is fast and efficient, providing users with immediate feedback.
+
+Summary Output: After processing the uploaded data, the application generates a downloadable Excel file containing predictions for each session. The output file also includes a summary that indicates the total number of individuals predicted to have Parkinson's disease and those who are not.
+
+User-Friendly Interface: The application features an intuitive web interface where users can easily upload their files and obtain predictions. The upload area is visually appealing, with clear guidelines on how to format the data and what to expect in the output.
+
+Proactive Healthcare Tool: This application is particularly valuable for healthcare providers and researchers, offering a tool for the early detection of Parkinson's disease. By analyzing voice data, it helps in identifying individuals who may require further medical evaluation.
+
+How to Use
+Prepare Your Data: Ensure your dataset is in CSV or DATA format with the required features.
+Upload the File: Use the upload area on the index page to select and submit your file.
+Download Predictions: After the analysis, download the Excel file containing the predictions and summary.
+This application streamlines the prediction process, enabling better patient outcomes through early intervention and targeted healthcare strategies.
+
