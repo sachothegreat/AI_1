@@ -1,4 +1,4 @@
-Parkinson's Disease Prediction Web Application
+Early Onset Parkinson's Disease Prediction Web Application
 This web-based application is designed to predict whether an individual has Parkinson's disease based on a range of biomedical voice measurements. It leverages advanced machine learning models to analyze voice data, providing a reliable tool for early detection and proactive healthcare decisions.
 
 Key Features
