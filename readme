@@ -22,7 +22,7 @@ For any suggestions or discussions regarding this topic or project please contac
 
 ## Acknowledgments
 
-This project utilizes a dataset from Kaggle. The dataset used for training and evaluating the models in this project is titled "[Dataset Name]" and can be found [here](https://www.kaggle.com/path/to/dataset).
+This project utilizes a dataset from Kaggle. The dataset used for training and evaluating the models in this project is titled "Parkinson Disease Detection" and can be found [here](https://www.kaggle.com/datasets/debasisdotcom/parkinson-disease-detection/data).
 
 ### Dataset Credits
 - **Dataset Title**: Parkinson Disease Detection
